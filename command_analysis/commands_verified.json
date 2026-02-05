@@ -1,0 +1,987 @@
+{
+    "edemote": {
+        "name": "edemote",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/edemote.c",
+        "help": "指令格式 : edemote [-d|-p] <emote>\n \n这个指令可以修改, 删除 emote 或列出其内容. 加上 -d 参数会删除\n指定的 emote, -p 参数则会列出指定 emote 的内容. 列出的顺序与编\n辑 emote 时相同.\n \n输入 emote 讯息时有三个项目: 没有目标, 指定目标或是对自己. 若\n不想有某项讯息, 则直接在空白行输入 '.' 跳过.\n \n一个 emote 讯息可以有很多行, 在空白行输入 '.' 结束输入该项 emote.\n \n编辑 emote 时可以用以下的符号来表示:\n \n$N : 自己的名字.\n$n : 目标的名字.\n$P : 自己的人称代名词.\n$p : 目标的人称代名词.",
+        "verified": false
+    },
+    "ls": {
+        "name": "ls",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/ls.c",
+        "help": "指令格式: ls [<路径名>]\n \n列出目录下所有的子目录及档案, 如果没有指定目录, 则列出所在目录\n的内容，所列出的档案中前面标示 * 号的是已经载入的物件。\n \n□例:\n'ls /' 会列出所有位於根目录下的档案及子目录.",
+        "verified": false
+    },
+    "where": {
+        "name": "where",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/where.c",
+        "help": "指令格式: where <玩家的 ID>\n\n这个指令是用来得知玩家目前所在的位置.",
+        "verified": false
+    },
+    "mem": {
+        "name": "mem",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/mem.c",
+        "help": "指令格式 : mem <物件之名称或档名>\n\n这个指令告诉你某个物件占用的记忆体数量。\n若没有指明物件, 则会显示目前游戏所占用的记忆体.",
+        "verified": false
+    },
+    "more": {
+        "name": "more",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/more.c",
+        "help": null,
+        "verified": false
+    },
+    "pwd": {
+        "name": "pwd",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/pwd.c",
+        "help": "指令格式 : pwd\n \n这个指令会显示出你目前的工作目录 (cwd) 及工作档案 (cwf).\n'update' 不加参数时便会更新你的 cwf.",
+        "verified": false
+    },
+    "status": {
+        "name": "status",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/status.c",
+        "help": "指令格式 : status [detail]\n \n这个指令可以显示出目前游戏的一些相关资料及状况.",
+        "verified": false
+    },
+    "cd": {
+        "name": "cd",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/cd.c",
+        "help": "指令格式 : cd <子目录名>, cd .. , and cd\n\n将目前参考的目录移至指定的子目录或回到上一主目录; 亦可直接回到自己工作目录。",
+        "verified": false
+    },
+    "goto": {
+        "name": "goto",
+        "category": "imm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/imm/goto.c",
+        "help": "指令格式 : goto [-i] <目标>\n \n这个指令会将你传送到指定的目标. 目标可以是一个living 或房间\n的档名. 如果目标是living , 你会被移到跟那个人同样的环境.\n如果有加上 -i 参数且目标是 living, 则你会被移到该 living 的\n的 inventory 中.",
+        "verified": false
+    },
+    "inventory": {
+        "name": "inventory",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/inventory.c",
+        "help": "指令格式: inventory\n \n可列出你(□)目前身上所携带的所有物品。\n \n注 : 此指令可以 \" i \" 代替。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "wimpy": {
+        "name": "wimpy",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/wimpy.c",
+        "help": "你现在的当「气」低於 \" + (int)me->query(\"wimpy\") \n\t\t\t+ \"% 时就会尝试逃跑。\\n",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "nick": {
+        "name": "nick",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/nick.c",
+        "help": "指令格式 : nick <外号, 绰号>\n \n这个指令可以让你为自己取一个响亮的名号或头衔，你如果希望在绰号中\n使用 ANSI 的控制字元改变颜色，可以用以下的控制字串：\n\n$BLK$ - 黑色\t\t$NOR$ - 恢复正常颜色\n$RED$ - 红色\t\t$HIR$ - 亮红色\n$GRN$ - 绿色\t\t$HIG$ - 亮绿色\n$YEL$ - 土黄色\t\t$HIY$ - 黄色\n$BLU$ - 深蓝色\t\t$HIB$ - 蓝色\n$MAG$ - 浅紫色\t\t$HIM$ - 粉红色\n$CYN$ - 蓝绿色\t\t$HIC$ - 天青色\n$WHT$ - 浅灰色\t\t$HIW$ - 白色\n \n其中系统自动会在字串尾端加一个 $NOR$。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "uptime": {
+        "name": "uptime",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/uptime.c",
+        "help": "指令格式 : uptime\n \n这个指令告诉你东方故事 II 已经连续执行了多久.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "set": {
+        "name": "set",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/set.c",
+        "help": "你目前设定的环境变数有：\\n",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "hp": {
+        "name": "hp",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/hp.c",
+        "help": "指令格式 : hp\n           hp <对象名称>                   (巫师专用)\n \n这个指令可以显示你(□)或指定对象(含怪物)的精, 气, 神数值。\n \nsee also : score",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "unset": {
+        "name": "unset",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/unset.c",
+        "help": "Ok.\\n",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "semote": {
+        "name": "semote",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/semote.c",
+        "help": "指令格式 : semote\n\n这个指令可以列出目前所能使用的emote.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "finger": {
+        "name": "finger",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/finger.c",
+        "help": "指令格式 : finger [使用者姓名]\n \n这个指令, 如果没有指定使用者姓明, 会显示出所有正在线上玩家\n的连线资料. 反之, 则可显示有关某个玩家的连线, 权限等资料.\n \nsee also : who",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "who": {
+        "name": "who",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/who.c",
+        "help": "指令格式 : who [-l|-i|-w]\n\n这个指令可以列出所有在线上的玩家及其等级。\n\n-l 选项列出较长的讯息。\n-i 只列出玩家的英文代号。\n-w 只列出线上所有的巫师。\n\n相关指令： finger",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "quit": {
+        "name": "quit",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/quit.c",
+        "help": "指令格式 : quit\n\n当你(□)想暂时离开时, 可利用此一指令。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "time": {
+        "name": "time",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/time.c",
+        "help": "指令格式: time\n\n这个指令让你(□)知道现在的时辰。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "help": {
+        "name": "help",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/help.c",
+        "help": "指令格式：help <主题>              例如：> help cmds\n          help <函数名称>()        例如：> help call_out()\n\n这个指令提供你针对某一主题的详细说明文件，若是不指定主题，则提供你有关\n主题的文件。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "passwd": {
+        "name": "passwd",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/passwd.c",
+        "help": "指令格式 : passwd\n \n这个指令可以修改你的人物密码。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "tune": {
+        "name": "tune",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/tune.c",
+        "help": "指令格式：tune [<频道名称>]\n\n这个指令让你选择是否要收听某一频道的讯息，如果没有指定频道名称，就会列出\n你目前收听中的频道，如果指定了频道，原来收听中的就会关掉，反之打开。\n\n如果你对一个没有收听中的频道讲话，会自动将它打开。\n要对一个频道讲话，只要用：\n\n<频道名称> <讯息> ....\n\n例子：\n  chat hello everyone!\n  \n你可以用 help channels 查询目前有哪些频道可以收听。\n\nsee also : shout",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "title": {
+        "name": "title",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/title.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "score": {
+        "name": "score",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/score.c",
+        "help": "指令格式 : score\n           score <对象名称>                   (巫师专用)\n\n这个指令可以显示你(□)或指定对象(含怪物)的基本资料。\n基本资料的设定请参阅 'help setup'。\n\n为了避免玩家为了「天赋」的数值而反覆创造人物，因此限定只有在综合评价达到\n100 以上的玩家或巫师才看得到天赋状况。\n\nsee also : hp",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "alias": {
+        "name": "alias",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/alias.c",
+        "help": "指令格式 : alias <欲设定之指令> <系统提供之指令>\n \n有时系统所提供之指令需要输入很长的字串, 在使用时(尤其是经常用到的)\n或许会感觉不方便, 此时你(□)即可用此一指令设定并替代原有之指令。\n \n□例:\n\t'alias sc score' 会以 sc 取代 score 指令。\n\t'alias' 後不加参数则列出你所有的替代指令。\n\t'alias sc' 会消除 sc 这个替代指令。 (如果你有设的话)\n \n其中可以用 $1, $2, $3 .... 来取代第一、第二、第三个参数，或是 $* 取代\n所有的参数，如：\n\t'alias pb put $1 in $2'\n\n则每当你(□)打：\n\tpb bandage bag\n\n就会取代成：\n\tput bandage in bag",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "version": {
+        "name": "version",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/version.c",
+        "help": "指令格式 : version\n \n这个指令会显示游戏目前所用的 MudOS driver 版本.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "quest": {
+        "name": "quest",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/quest.c",
+        "help": "指令格式 : quest",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "skills": {
+        "name": "skills",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/skills.c",
+        "help": "指令格式 : skills [<某人>]\n\n这个指令可以让你(□)查询所学过的技能。\n\n你也可以指定一个和你有师徒关系的对象，用 skills 可以查知对方的技能状况。\n\n巫师可以查询任何人或 NPC 的技能状况。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "save": {
+        "name": "save",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/save.c",
+        "help": "指令格式：save\n\n把你辛苦奋斗的结果存起来。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "describe": {
+        "name": "describe",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/describe.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "id": {
+        "name": "id",
+        "category": "usr",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/usr/id.c",
+        "help": "指令格式 : id [here]\n \n这个指令可以让你知道物品的英文名称及名字. 只打 id 会显示\n你身上所携带物品的名称. 'id here' 则显示所有跟你在同一个\n环境里的物件名称.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "cp": {
+        "name": "cp",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/cp.c",
+        "help": "指令格式 : cp <原档名> <目标档名>\n \n此指令可让你(□)拷贝档案。",
+        "verified": false
+    },
+    "home": {
+        "name": "home",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/home.c",
+        "help": "指令格式 : home\n\n利用此一指令可直接回到自己的工作室。\n如果你有 'msg_home' 这个设定, 则在场的人都会看到那个讯息.",
+        "verified": false
+    },
+    "mudlist": {
+        "name": "mudlist",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/mudlist.c",
+        "help": null,
+        "verified": false
+    },
+    "localcmds": {
+        "name": "localcmds",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/localcmds.c",
+        "help": null,
+        "verified": false
+    },
+    "tail": {
+        "name": "tail",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/tail.c",
+        "help": null,
+        "verified": false
+    },
+    "ff": {
+        "name": "ff",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/ff.c",
+        "help": null,
+        "verified": false
+    },
+    "ulist": {
+        "name": "ulist",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/ulist.c",
+        "help": "指令格式 : ulist\n\n将线上所有玩家的/obj/user number 显示出来。",
+        "verified": false
+    },
+    "summon": {
+        "name": "summon",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/summon.c",
+        "help": "指令格式 : summon <某人>\n\n此指令可让你(□)将某人抓到你面前。",
+        "verified": false
+    },
+    "info": {
+        "name": "info",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/info.c",
+        "help": "档案：\\t\\t\" + base_name(obj) + \".c\\n",
+        "verified": false
+    },
+    "rm": {
+        "name": "rm",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/rm.c",
+        "help": "Ok.\\n",
+        "verified": false
+    },
+    "cat": {
+        "name": "cat",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/cat.c",
+        "help": null,
+        "verified": false
+    },
+    "update": {
+        "name": "update",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/update.c",
+        "help": "指令格式 : update <档名|here|me|玩家名>\n \n这个指令可以更新档案, 并将新档的内容载入记忆体内. 若目标为\n'here' 则更新所在环境. 若目标为 'me' 则更新自己的人物. 若目\n标为玩家则可更新玩家物件.",
+        "verified": false
+    },
+    "dest": {
+        "name": "dest",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/dest.c",
+        "help": "指令格式 : dest [-r] <物件之名称或档名>\n\n利用此一指令可将一个物件(object)或物件定义(class)从记忆体中清除，若清除物\n件定义(即：指定档名的情况下)则下一次参考到这个物件的时候会重新将它编译。\n\n具有 (admin) 身分的巫师可以用 -r 选项以 ROOT_UID 身分来清除被保护的物件如\n使用者。\n\n参考资料： destruct()",
+        "verified": false
+    },
+    "ilist": {
+        "name": "ilist",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/ilist.c",
+        "help": "指令格式: ilist <物件或档名>\n \n列出一个物件所继承的所有物件。",
+        "verified": false
+    },
+    "edit": {
+        "name": "edit",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/edit.c",
+        "help": "指令格式 : edit <档名>, edit here\n\n利用此一指令可直接在线上编辑档案。",
+        "verified": false
+    },
+    "mkdir": {
+        "name": "mkdir",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/mkdir.c",
+        "help": "Ok.\\n",
+        "verified": false
+    },
+    "config": {
+        "name": "config",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/config.c",
+        "help": "指令格式 : config\n\nShow 出本 MUD 的 Startup Configuration 。",
+        "verified": false
+    },
+    "halt": {
+        "name": "halt",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/halt.c",
+        "help": "指令格式: halt\n\n可以停止所有与你(□)有关的战斗。",
+        "verified": false
+    },
+    "wizlist": {
+        "name": "wizlist",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/wizlist.c",
+        "help": "指令格式 : wizlist\n\n用途 : 列出目前所有的巫师名单。",
+        "verified": false
+    },
+    "mv": {
+        "name": "mv",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/mv.c",
+        "help": "指令格式 : mv <原档名> <目标档名>\n \n此指令可让你(□)修改某个档案或目录名称。",
+        "verified": false
+    },
+    "test": {
+        "name": "test",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/test.c",
+        "help": "指令格式 : test <某人>\n\n用来测试武功技能的强弱。",
+        "verified": false
+    },
+    "whoami": {
+        "name": "whoami",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/whoami.c",
+        "help": "指令格式 : whoami \n\nShow 出你的 User ID 及 Effective User ID 。",
+        "verified": false
+    },
+    "relive": {
+        "name": "relive",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/relive.c",
+        "help": null,
+        "verified": false
+    },
+    "snoop": {
+        "name": "snoop",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/snoop.c",
+        "help": null,
+        "verified": false
+    },
+    "cost": {
+        "name": "cost",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/cost.c",
+        "help": null,
+        "verified": false
+    },
+    "clone": {
+        "name": "clone",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/clone.c",
+        "help": "指令格式 : clone <档名>\n\n利用此指令可复制任何能移动之物件(含怪物)。",
+        "verified": false
+    },
+    "rmdir": {
+        "name": "rmdir",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/rmdir.c",
+        "help": "Ok.\\n",
+        "verified": false
+    },
+    "qload": {
+        "name": "qload",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/qload.c",
+        "help": "指令格式 : qload \n\n这个指令显示出目前 CPU 的负担, cmds/s 是每秒编译几个 cmds\ncomp lines/s 是每秒几行。",
+        "verified": false
+    },
+    "call": {
+        "name": "call",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/call.c",
+        "help": "指令格式 : call <物件>-><函数>(<参数>, ...... )\n \n呼叫<物件>里的<函数>并传入相关<参数>.",
+        "verified": false
+    },
+    "smash": {
+        "name": "smash",
+        "category": "wiz",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/wiz/smash.c",
+        "help": "指令格式: smash <生物>\n \nhehehehehe...........",
+        "verified": false
+    },
+    "wield": {
+        "name": "wield",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/wield.c",
+        "help": "指令格式：wield <装备名称>\n \n这个指令让你装备某件物品作武器, 你必需要拥有这样物品.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "tell": {
+        "name": "tell",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/tell.c",
+        "help": "网路讯息已送出，可能要稍候才能得到回应。\\n",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "to": {
+        "name": "to",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/to.c",
+        "help": "指令格式 : to <指令>\n\n可以一次输出多行以上的文字, <指令>通常是输出讯息的指令如\nsay , tell , describe , chat , reple ........等。\n□例 : \n to say\n 结束离开用 '.'，取消输入用 '~q'，使用内建列编辑器用 '~e'。\n —————————————————————————————\n 东方神教教主 : 安尼席洛特尔\n 教主大夫人暨发呆部部长 : Elon\n 教主小老婆暨摸鱼部部长 : 梦忆柔\n 大弟子暨打混部部长 : 风火血舞\n .\n\n输出到萤幕上的结果则是 :\n\n你说道：东方神教教主 : 安尼席洛特尔\n教主大夫人暨发呆部部长 : Elon\n教主小老婆暨摸鱼部部长 : 梦忆柔\n大弟子暨打混部部长 : 风火血舞",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "surrender": {
+        "name": "surrender",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/surrender.c",
+        "help": "指令格式 : surrender\n \n这个指令可以让你向敌人投降而终止战斗。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "exercise": {
+        "name": "exercise",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/exercise.c",
+        "help": "指令格式 : exercise [<耗费「气」的量，预设值 30>]\n\n运气练功，控制体内的气在各经脉间流动，藉以训练人体肌肉骨骼的耐\n力、爆发力，并且用内力的形式将能量储备下来。\n\n请参考 help stats",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "biwu": {
+        "name": "biwu",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/biwu.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "selflearn": {
+        "name": "selflearn",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/selflearn.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "emote": {
+        "name": "emote",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/emote.c",
+        "help": "指令格式: emote <动作词>\n\n这个指令可以让你表达一个系统没有预设的动作词, 系统会将你所输入\n的文字加上你的姓名後显示给所有在同一个地方的生物看. 为了避免造\n成困扰, 玩家所输入的词句前面会加上 -> 以供区别. (巫师则不在此\n限.)\n\n□例: emote 坐了下来。\n你会看见: 你坐了下来。\n其他人会看到: ->包子坐了下来。\n\n其中, 包子就是你的名字.\n\n相关指令: semote",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "follow": {
+        "name": "follow",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/follow.c",
+        "help": "指令格式 : follow [<生物>|none]\n \n这个指令让你能跟随某人或生物。\n如果输入 follow none 则停止跟随。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "say": {
+        "name": "say",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/say.c",
+        "help": "指令格式: say <讯息>\n \n说话，所有跟你在同一个房间的人都会听到你说的话。\n \n注: 本指令可用 ' 取代.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "recruit": {
+        "name": "recruit",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/recruit.c",
+        "help": "指令格式 : recruit [cancel]|<对象>\n \n这个指令能让你收某人为弟子, 如果对方也答应要拜你为师的话.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "u_emote": {
+        "name": "u_emote",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/u_emote.c",
+        "help": "指令格式: emote <动作词>\n\n这个指令可以让你表达一个系统没有预设的动作词, 系统会将你所输入\n的文字加上你的姓名後显示给所有在同一个地方的生物看. 为了避免造\n成困扰, 玩家所输入的词句前面会加上 -> 以供区别. (巫师则不在此\n限.)\n\n□例: emote 坐了下来。\n你会看见: 你坐了下来。\n其他人会看到: ->包子坐了下来。\n\n其中, 包子就是你的名字.\n\n相关指令: semote",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "give": {
+        "name": "give",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/give.c",
+        "help": "指令格式 : give <物品名称> to <某人>\n      或 : give <某人> <物品名称>\n \n这个指令可以让你将某样物品给别人, 当然, 首先你要拥有这样物品.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "cast": {
+        "name": "cast",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/cast.c",
+        "help": "指令格式：cast <咒文名称> [on <施咒对象>]\n \n施法，你必需要指定<咒文名称>，<施咒对象>则可有可无。\n在你使用某一个咒文之前，你必须先用 enable 指令来指定你要使用的咒文系。\n \n注：如果你改变自己的咒文系，你原本蓄积的法力并不能直接转换过去，必须\n    从 0 开始。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "suicide": {
+        "name": "suicide",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/suicide.c",
+        "help": "指令格式: suicide [-f]\n \n如果因为某种原因你不想活了, 你可以选择自杀.\n自杀分两种:\n \nsuicide    : 重新投胎\nsuicide -f : 永远的除去玩家资料, 系统会要求你\n             输入密码以确认身份.\n \n请慎重选择 :)",
+        "verified": false,
+        "verification_note": "Response: 编译时段错误：/cmds/std/suicide.c line 67: Bad right argu"
+    },
+    "shout": {
+        "name": "shout",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/shout.c",
+        "help": "指令格式 : shout <讯息>\n \n这个指令让你将 <讯息> 传送出去, 所有正在游戏中的人都\n会听见你的话.\n \nsee also : tune",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "look": {
+        "name": "look",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/look.c",
+        "help": "指令格式: look [<物品>|<生物>|<方向>]\n \n这个指令让你查看你所在的环境、某件物品、生物、或是方向。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "perform": {
+        "name": "perform",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/perform.c",
+        "help": "指令格式：perfrom [<武功种类>.]<招式名称> [<施用对象>]\n\n如果你所学的外功(拳脚、剑法、刀法....)有一些特殊的攻击方式或招式，可以\n用这个指令来使用，你必须先用 enable 指令指定你使用的武功，不指定武功种\n类时，空手的外功是指你的拳脚功夫，使用武器时则是兵刃的武功。\n\n若是你的外功中有种类不同，但是招式名称相同的，或者不属於拳脚跟武器技能\n的武功(如轻功)，可以用 <武功>.<招式>  的方式指定，如：\n\nperform sword.powerfocus \nperform move.reflexion\n\n换句话说，只要是 enable 中的武功有特殊招式的，都可以用这个指令使用。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "exert": {
+        "name": "exert",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/exert.c",
+        "help": "指令格式：exert <功能名称> [<施用对象>]\n\n用内力进行一些特异功能，你必需要指定<功能名称>，<施用对象>则可有可无。\n在你使用某一种内功的特异功能之前，你必须先用 enable 指令来指定你要使用\n的内功。\n\n请参考 help force 可得知一些大部分内功都有的功能，至於你所用的内功到底\n有没有该功能，试一试或参考其他说明便知。\n\n注：如果你改变自己的内功，你原本蓄积的内力并不能直接转换过去，必须\n    从 0 开始。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "apprentice": {
+        "name": "apprentice",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/apprentice.c",
+        "help": "指令格式 : apprentice [cancel]|<对象>\n \n这个指令能让你拜某人为师，如果对方也答应要收你为徒的话，就会立即行\n拜师之礼，否则要等到对方用 recruit 指令收你为弟子才能正式拜师。\n\n请注意你已经有了师父，又背叛师门投入别人门下，所有技能会减半，并且\n评价会降到零。\n\n如果对你的师父使用这个指令，会变成向师父请安。\n \n请参考相关指令 expell、recruit",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "team": {
+        "name": "team",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/team.c",
+        "help": "队伍指令使用方法:\n\nteam with <某人> - 跟某人组成队伍. 必须要双方都同意加入才会生效。\nteam dismiss     - 离开队伍. 若下此指令的是领队, 则整个队伍会解散。\nteam talk <讯息> - 跟队伍里其他的人谈话, 可以用 tt <讯息> 替代。\nteam form <阵法> - 如果队伍的领队学过阵法的话，可以将队伍中的成员组织成\n                   某种阵形，组成阵形的状态只要领袖一移动就会解除。\n\n直接下 team 指令时则会显示你目前是否有加入队伍及队员名单。\n\n注: team 跟 follow 是独立的，你不一定要 follow 队伍的领袖。",
+        "verified": false,
+        "verification_note": "Response: 队伍指令使用方法:\r\n\r\nteam with <某人> - 跟某人组成队伍. 必须要双方都同意加入才"
+    },
+    "drop": {
+        "name": "drop",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/drop.c",
+        "help": "指令格式 : drop <物品名称>\n \n这个指令可以让你丢下你所携带的物品.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "enforce": {
+        "name": "enforce",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/enforce.c",
+        "help": "指令格式: enforce <使出几点内力伤敌>|none\n \n这个指令让你指定每次击中敌人时，要发出几点内力伤敌。\n\nenforce none 则表示你不使用内力。 \n\nSEE ALSO : enable, enchant",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "go": {
+        "name": "go",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/go.c",
+        "help": "指令格式 : go <方向>\n \n让你往指定的方向移动。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "ask": {
+        "name": "ask",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/ask.c",
+        "help": "指令格式: ask <someone> about <something>\n\n这个指令在解谜时很重要, 通常必须藉由此一指令才能\n获得进一步的资讯。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "get": {
+        "name": "get",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/get.c",
+        "help": "指令格式 : get <物品名称> [from <容器名>]\n \n这个指令可以让你捡起地上或容器内的某样物品.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "fight": {
+        "name": "fight",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/fight.c",
+        "help": "指令格式 : fight <人物>\n \n这个指令让你向一个人物「讨教」或者是「切磋武艺」，这种形式的战斗纯粹是\n点到为止，因此只会消耗体力，不会真的受伤，但是并不是所有的  NPC 都喜欢\n打架，因此有需多状况你的比武要求会被拒绝。\n \n其他相关指令: kill\n\nPS. 如果对方不愿意接受你的挑战，你仍然可以迳行用 kill 指令开始战斗，有\n    关 fight 跟 kill 的区分请看 'help combat'.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "enchant": {
+        "name": "enchant",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/enchant.c",
+        "help": "指令格式: enchant <灵力点数>\n \n这个指令让你设定使用魔法武器时要用来导引武器魔力所用的灵力强度。\n不同的武器所需的灵力不同，威力也不一样，有些魔力强大的武器如果使用者\n无法发出足以驾驭它的灵力，就有可能产生可怕的後果。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "expell": {
+        "name": "expell",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/expell.c",
+        "help": "指令格式 : expell <某人>\n \n这个指令可以让你开除不成才的弟子，被开除的弟子所有技能都会降到原来\n的一半，而且综合评价一项会变成零，这对於一个人物而言是一个「比死还\n严重」的打击，请你在开除一名弟子之前务必审慎考虑。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "buy": {
+        "name": "buy",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/buy.c",
+        "help": "指令格式: buy <something> from <someone>\n\n这一指令让你可以从某些人身上买到物品。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "respirate": {
+        "name": "respirate",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/respirate.c",
+        "help": "指令格式 : respirate [<耗费「精」的量，预设值 30>]\n \n打坐修行，利用「炼精化气，炼气化神，炼神还虚」的方法将你的精力\n转变成灵力。\n\n请参考 help stats",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "whisper": {
+        "name": "whisper",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/whisper.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "steal": {
+        "name": "steal",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/steal.c",
+        "help": "指令格式 : steal <某物> from <某人>\n\n这个指令让你有机会偷到他人身上的东西。成功了, 当然你就能获得\n该样物品。可是, 马有失蹄, 人总有失风的时候, 当你失败时当然就\n得付出代价, 至於是什麽代价......靠你自己去发掘罗。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "scribe": {
+        "name": "scribe",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/scribe.c",
+        "help": "指令格式：scribe <符咒名称> on <物品名称> [for <对象>]\n\n在画符用的桃符纸(paper seal)或其他物品上画符，即使是相同的符咒，画在不\n同的物品上也有可能有不同的效果。\n\n在你画符之前，你必须先用 enable 指令来指定你要使用的咒文系。\n\n注：画符会消耗若干气(要咬破手指用鲜血画)与神，画成的符咒可以用 attach\n    指令将它贴在目标物身上。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "practice": {
+        "name": "practice",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/practice.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "reply": {
+        "name": "reply",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/reply.c",
+        "help": "网路讯息已送出，可能要稍候才能得到回应。\\n",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "abandon": {
+        "name": "abandon",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/abandon.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "kill": {
+        "name": "kill",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/kill.c",
+        "help": "指令格式 : kill <人物>\n \n这个指令让你主动开始攻击一个人物，并且□试杀死对方，kill 和 fight 最大的\n不同在於双方将会真刀实枪地打斗，也就是说，会真的受伤。由於 kill 只需单方\n面一厢情愿就可以成立，因此你对任何人使用 kill 指令都会开始战斗，通常如果\n对方是 NPC 的话，他们也会同样对你使用 kill。\n\n当有人对你使用 kill 指令时会出现红色的字样警告你，对於一个玩家而言，如果\n你没有对一名敌人使用过 kill 指令，就不会将对方真的打伤或杀死( 使用法术除\n外)。\n\n其他相关指令: fight\n\n有关 fight 跟 kill 的区分请看 'help combat'.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "unwield": {
+        "name": "unwield",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/unwield.c",
+        "help": "指令格式 : unwield <物品名>\n \n这个指令让你放下手中的武器。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "conjure": {
+        "name": "conjure",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/conjure.c",
+        "help": "指令格式：conjure <法术名称> [on <对象>]\n \n施法，你必需要指定<法术名称>，<对象>则可有可无。\n在你使用某一个法术之前，你必须先用 enable 指令来指定你要使用的法术系。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "attach": {
+        "name": "attach",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/attach.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "chant": {
+        "name": "chant",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/chant.c",
+        "help": null,
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "remove": {
+        "name": "remove",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/remove.c",
+        "help": "指令格式 : remove all | <物品名称>\n \n这个指令让你脱掉身上某件防具.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "enable": {
+        "name": "enable",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/enable.c",
+        "help": "指令格式 : enable [<技能种类> <技能名称> | none]\n           enable ?\n\n这个指令让你指定所要用的技能，需指明技能种类和技能名称。如果不加参\n数则会显示出技能种类及你目前所使用的技能名称 ，如果加一个 ? 会列出\n所有能使用特殊技能的技能种类。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "put": {
+        "name": "put",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/put.c",
+        "help": "指令格式 : put <物品名称> in <某容器>\n \n这个指令可以让你将某样物品放进一个容器，当然，首先你要拥有这样物品。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "learn": {
+        "name": "learn",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/learn.c",
+        "help": "指令格式 : learn <技能> from <某人>\n \n这个指令可以让你向别人请教有关某一种技能的疑难问题，当然，你请教的对象在这\n项技能上的造诣必须比你高，而你经由这种方式学习得来的技能也不可能高於你所请\n教的人，然而因为这种学习方式相当於一种「经验的传承」，因此学习可以说是熟悉\n一种新技能最快的方法。\n\n通常，一个人刚学到一种新技能是不会有什麽疑难问题的，而是经由实际上的应用中\n遭遇问题，这些问题对於学习一种新技能的过程是很重要的，尤其是各种作为其他技\n能基础的基本技能，更需要经由「发现问题—解决问题」的过程才能得到较好的效果\n因此我们将这种发现问题的过程用「潜能」的观念表示，一个人能够自己发现某些问\n题，表示他(她)有解决这项问题的潜能，当你具有这样的潜能时就可以利用这个指令\n来向其他人请教，而获得进步。\n(PS. 潜能还有其他更广义的定义，这里只是其中之一 )\n\n此外学习也需要消耗一些精力，而消耗的精力跟你自己、与你学习对象的悟性有关。\n\n至於如何知道你能从对方学到什麽技能，如果对方是你的师父，可以用 skills 指令\n直接查看，如果不是你的师父，那麽通常会有其他的提示，你只好自己想办法。\n\n其他相关指令 : practice、study",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "wear": {
+        "name": "wear",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/wear.c",
+        "help": "指令格式：wear <装备名称>\n \n这个指令让你装备某件防具。",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "open": {
+        "name": "open",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/open.c",
+        "help": "指令格式 : open <door> 或 <方向>\n \n这个指令可以让你打开门.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "close": {
+        "name": "close",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/close.c",
+        "help": "指令格式 : close <door> 或 <方向>\n \n这个指令可以让你关上门.",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "meditate": {
+        "name": "meditate",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/meditate.c",
+        "help": "指令格式 : meditate [<耗费「神」的量，预设值 30>]\n \n静坐冥思，将游离的精神力有效地集中凝聚成能够用来施展法术的能量\n，藉以增加自己的法力。\n\n请参考 help stat",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "study": {
+        "name": "study",
+        "category": "std",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/std/study.c",
+        "help": "指令格式: study <物品名称>\n\n这个指令使你可以从秘笈或其他物品自学某些技巧,\n但前提是: 你不能是个『文盲』。\n\nsee also : learn",
+        "verified": true,
+        "verification_note": "Help text verified via MUD"
+    },
+    "dump": {
+        "name": "dump",
+        "category": "adm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/adm/dump.c",
+        "help": "指令格式 : dump\n \ndump the stats of all objects to a file in root dir \nnamed OBJ_DUMP.",
+        "verified": false
+    },
+    "shutdown": {
+        "name": "shutdown",
+        "category": "adm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/adm/shutdown.c",
+        "help": "指令格式: shutdown\n \n马上重新起动游戏。",
+        "verified": false
+    },
+    "profile": {
+        "name": "profile",
+        "category": "adm",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/adm/profile.c",
+        "help": "指令格式: profile\n \nturns on command profiling, the result will be saved to /PROFILE",
+        "verified": false
+    },
+    "callouts": {
+        "name": "callouts",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/callouts.c",
+        "help": null,
+        "verified": false
+    },
+    "possess": {
+        "name": "possess",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/possess.c",
+        "help": null,
+        "verified": false
+    },
+    "reboot": {
+        "name": "reboot",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/reboot.c",
+        "help": "指令格式: reboot\n \n重新起动游戏, 系统会开始倒数计时, 十五分钟後重新起动。",
+        "verified": false
+    },
+    "purge": {
+        "name": "purge",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/purge.c",
+        "help": "指令格式：purge [<未上线天数>] | <使用者姓名> because <原因>\n\n清除一个使用者或清除超过一定天数不曾上线地使用者。",
+        "verified": false
+    },
+    "wizlock": {
+        "name": "wizlock",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/wizlock.c",
+        "help": "指令格式: wizlock <巫师等级>\n \n限制某个等级以下的使用者进入游戏。\n其中巫师等级分别为 (immortal) (wizard) (arch) (admin), 若要取\n消限制, 则输入 (player).",
+        "verified": false
+    },
+    "chinese": {
+        "name": "chinese",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/chinese.c",
+        "help": null,
+        "verified": false
+    },
+    "cleanup": {
+        "name": "cleanup",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/cleanup.c",
+        "help": "指令格式：cleanup <档名>\n\n对所有指定档名的物件呼叫 clean_up，并且清除所有被复制出来的，但是又没有\n被放在另一个物件中的散失物件。",
+        "verified": false
+    },
+    "reclaim": {
+        "name": "reclaim",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/reclaim.c",
+        "help": "指令格式 : reclaim\n\n用处 : 将存在於记忆体里无用的变数清除掉, 以减少记忆体的使用。",
+        "verified": false
+    },
+    "poss": {
+        "name": "poss",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/poss.c",
+        "help": null,
+        "verified": false
+    },
+    "promote": {
+        "name": "promote",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/promote.c",
+        "help": "指令格式 : promote <某人> (权限等级)\n\n用来提升权限等级, (player) (immortal) (apprentice) (wizard)\n(arch) (admin)\n一个 admin 能提升权限至任何等级, 而 arch 只能提升至 arch。",
+        "verified": false
+    },
+    "rehash": {
+        "name": "rehash",
+        "category": "arch",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/arch/rehash.c",
+        "help": "指令格式：rehash <目录名称>\n\n这个指令会更新系统内部的指令表，如果你新增或删除了某个目录下的指令，必须用\n这个指令更新该目录才能使用。",
+        "verified": false
+    },
+    "dbxframe": {
+        "name": "dbxframe",
+        "category": "debug",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/debug/dbxframe.c",
+        "help": null,
+        "verified": false
+    },
+    "dbxwhere": {
+        "name": "dbxwhere",
+        "category": "debug",
+        "file_path": "/path/to/es2-utf8-master/mudlib/cmds/debug/dbxwhere.c",
+        "help": null,
+        "verified": false
+    }
+}

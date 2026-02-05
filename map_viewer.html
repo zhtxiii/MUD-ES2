@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUD 地图查看器 (分层视图)</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #mynetwork {
+            flex-grow: 1;
+            background-color: #f0f0f0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #controls {
+            padding: 10px;
+            background: #eee;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ES2 MUD 地图查看器</h1>
+        <div id="status">加载中...</div>
+    </header>
+
+    <div id="controls">
+        <button id="btn-back" class="hidden" onclick="goBack()">返回总览</button>
+        <span id="current-view">视图: 总览</span>
+        <button onclick="network.fit()">适配屏幕</button>
+        <button onclick="togglePhysics()">切换物理引擎</button>
+        <span id="node-info" style="margin-left:auto">将鼠标悬停在节点上...</span>
+    </div>
+
+    <div id="mynetwork"></div>
+
+    <script src="mud_map.js"></script>
+
+    <script type="text/javascript">
+        var network;
+        var allNodes, allEdges;
+        var overviewNodes, overviewEdges;
+        var currentMode = 'overview'; // 'overview' or 'detail'
+        var currentArea = null;
+
+        // Colors for areas
+        function stringToColor(str) {
+            var hash = 0;
+            for (var i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            var c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+            return '#' + "00000".substring(0, 6 - c.length) + c;
+        }
+
+        function init() {
+            if (typeof window.mudData === 'undefined') {
+                document.getElementById('status').innerText = "错误: mud_map.js 未加载。";
+                return;
+            }
+
+            allNodes = new vis.DataSet(window.mudData.nodes);
+            allEdges = new vis.DataSet(window.mudData.edges);
+
+            buildOverviewGraph();
+            drawOverview();
+        }
+
+        function buildOverviewGraph() {
+            var areas = {};
+            var areaEdges = {};
+
+            // 1. Identify Areas and count nodes
+            allNodes.forEach(node => {
+                var group = node.group || 'unknown';
+                if (!areas[group]) {
+                    areas[group] = { id: group, label: group, value: 0, group: group };
+                }
+                areas[group].value += 1; // Size by node count
+            });
+
+            // 2. Identify Edges between Areas
+            allEdges.forEach(edge => {
+                var fromNode = allNodes.get(edge.from);
+                var toNode = allNodes.get(edge.to);
+
+                if (fromNode && toNode && fromNode.group !== toNode.group) {
+                    var edgeId = fromNode.group + "_" + toNode.group;
+                    if (!areaEdges[edgeId]) {
+                        areaEdges[edgeId] = {
+                            from: fromNode.group,
+                            to: toNode.group,
+                            value: 0,
+                            arrows: 'to',
+                            color: { color: '#848484' }
+                        };
+                    }
+                    areaEdges[edgeId].value += 1; // Thicker edge for more connections
+                }
+            });
+
+            overviewNodes = new vis.DataSet(Object.values(areas).map(a => ({
+                id: a.id,
+                label: a.label + " (" + a.value + ")",
+                value: a.value,
+                shape: 'database',
+                color: stringToColor(a.group),
+                font: { size: 20 }
+            })));
+
+            overviewEdges = new vis.DataSet(Object.values(areaEdges));
+        }
+
+        function drawOverview() {
+            currentMode = 'overview';
+            currentArea = null;
+            document.getElementById('btn-back').classList.add('hidden');
+            document.getElementById('current-view').innerText = "视图: 总览 (双击进入区域)";
+            document.getElementById('status').innerText = "显示区域总览";
+
+            var container = document.getElementById('mynetwork');
+            var data = { nodes: overviewNodes, edges: overviewEdges };
+            var options = {
+                physics: {
+                    enabled: true,
+                    stabilization: { iterations: 200 } // Fast stabilize for fewer nodes
+                },
+                interaction: { hover: true }
+            };
+
+            if (network) network.destroy();
+            network = new vis.Network(container, data, options);
+
+            network.on("doubleClick", function (params) {
+                if (params.nodes.length > 0) {
+                    var areaId = params.nodes[0];
+                    drawDetail(areaId);
+                }
+            });
+
+            network.on("click", function (params) {
+                if (params.nodes.length > 0) {
+                    var areaId = params.nodes[0];
+                    document.getElementById('node-info').innerText = "区域: " + areaId;
+                }
+            });
+        }
+
+        function drawDetail(areaId) {
+            currentMode = 'detail';
+            currentArea = areaId;
+            document.getElementById('btn-back').classList.remove('hidden');
+            document.getElementById('current-view').innerText = "视图: 区域 " + areaId;
+            document.getElementById('status').innerText = "显示区域 " + areaId + " 的房间";
+
+            // Filter nodes for this area
+            var subNodes = allNodes.get({
+                filter: function (item) {
+                    return item.group === areaId;
+                }
+            });
+
+            // Find valid node IDs in this subgraph
+            var validNodeIds = new Set(subNodes.map(n => n.id));
+
+            // Filter edges that connect ANY of these nodes
+            var subEdges = allEdges.get({
+                filter: function (item) {
+                    return validNodeIds.has(item.from) || validNodeIds.has(item.to);
+                }
+            });
+
+            var ghostNodes = [];
+            var addedGhosts = new Set();
+
+            subEdges.forEach(edge => {
+                if (!validNodeIds.has(edge.from)) {
+                    if (!addedGhosts.has(edge.from)) {
+                        var node = allNodes.get(edge.from);
+                        if (node) {
+                            ghostNodes.push({ ...node, color: '#e0e0e0', shape: 'box', label: "去往: " + node.group });
+                            addedGhosts.add(edge.from);
+                        }
+                    }
+                }
+                if (!validNodeIds.has(edge.to)) {
+                    if (!addedGhosts.has(edge.to)) {
+                        var node = allNodes.get(edge.to);
+                        if (node) {
+                            ghostNodes.push({ ...node, color: '#e0e0e0', shape: 'box', label: "去往: " + node.group });
+                            addedGhosts.add(edge.to);
+                        }
+                    }
+                }
+            });
+
+            var displayNodes = new vis.DataSet([...subNodes, ...ghostNodes]);
+            var displayEdges = new vis.DataSet(subEdges);
+
+            var container = document.getElementById('mynetwork');
+            var data = { nodes: displayNodes, edges: displayEdges };
+            var options = {
+                nodes: {
+                    shape: 'dot',
+                    size: 20,
+                    font: { size: 14, color: '#333' }
+                },
+                layout: { improvedLayout: false },
+                physics: {
+                    enabled: true,
+                    barnesHut: {
+                        gravitationalConstant: -4000,
+                        springConstant: 0.04,
+                        avoidOverlap: 0.1
+                    },
+                    stabilization: { iterations: 500 }
+                },
+                interaction: { hover: true, navigationButtons: true }
+            };
+
+            if (network) network.destroy();
+            network = new vis.Network(container, data, options);
+
+            network.on("click", function (params) {
+                if (params.nodes.length > 0) {
+                    var nodeId = params.nodes[0];
+                    var node = allNodes.get(nodeId);
+                    if (node) {
+                        document.getElementById('node-info').innerText = node.label + " (" + (node.path || "外部连接") + ")";
+                    }
+                }
+            });
+        }
+
+        function goBack() {
+            drawOverview();
+        }
+
+        function togglePhysics() {
+            if (!network) return;
+            var options = { physics: { enabled: !network.physics.options.enabled } };
+            network.setOptions(options);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+
+</html>

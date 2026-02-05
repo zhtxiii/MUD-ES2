@@ -14,7 +14,7 @@ LONG
 	);
 	set("item_desc", ([
 		"pine": "一株又高又大的松树，当你抬头往上看的时候似乎有个人影\n"
-				"在树梢之间移动，不过也许\是风吹动所造成的错觉。\n",
+				"在树梢之间移动，不过也许是风吹动所造成的错觉。\n",
 		"sign": "「官府告示：此处常有歹人出没。」\n"
 	]) );
 	set("exits", ([
@@ -30,7 +30,7 @@ void init()
 {
 	add_action("do_climb", "climb");
 	if( this_player() ) {
-		tell_room(__DIR__"tree1", this_player()->name() + "往树下走了过来。\n");
+		//tell_room(__DIR__"tree1", this_player()->name() + "往树下走了过来。\n");
 	}
 }
 
@@ -41,7 +41,7 @@ int do_climb(string arg)
 	message_vision("$N手脚并用，敏捷地爬上了空地中央的大松树。\n",
 		this_player());
 
-	tell_room(__DIR__"tree1", this_player()->name() + "从树下爬了上来。\n");
+	//tell_room(__DIR__"tree1", this_player()->name() + "从树下爬了上来。\n");
 	this_player()->move(__DIR__"tree1");
 
 	return 1;
@@ -49,7 +49,7 @@ int do_climb(string arg)
 
 int valid_leave(object me, string dir)
 {
-	tell_room(__DIR__"tree1",
-		"树下的" + me->name() + "往" + to_chinese(dir) + "离开了。\n");
+	//tell_room(__DIR__"tree1",
+	//	"树下的" + me->name() + "往" + to_chinese(dir) + "离开了。\n");
 	return 1;
 }

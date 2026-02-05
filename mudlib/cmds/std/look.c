@@ -54,9 +54,8 @@ int look_room(object me, object env)
 		write("你的四周灰蒙蒙地一片，什麽也没有。\n");
 		return 1;
 	}
-	str = sprintf( "\n▲ %s - %s\n  %s\n%s",
+	str = sprintf( "\n▲ %s\n  %s\n%s",
 		env->query("short"),
-		file_name(env),
 		replace_string(env->query("long"), "\n", ""),
 		env->query("outdoors")? NATURE_D->outdoor_room_description() : "" );
 

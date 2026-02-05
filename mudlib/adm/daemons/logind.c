@@ -49,7 +49,7 @@ void logon(object ob)
                 wiz_cnt, ppl_cnt, login_cnt );
 
         write("您的英文名字：");
-        input_to( (: get_id :), ob );
+        input_to( (: get_id :), 0, ob );
 }
 
 private void get_id(string arg, object ob)
@@ -60,7 +60,7 @@ private void get_id(string arg, object ob)
         arg = lower_case(arg);
         if( !check_legal_id(arg)) {
                 write("您的英文名字：");
-                input_to("get_id", ob);
+                input_to("get_id", 0, ob);
                 return;
         }
 
@@ -111,7 +111,7 @@ private void get_id(string arg, object ob)
 
         write("使用 " + (string)ob->query("id") + " 
 这个名字将会创造一个新的人物，您确定吗(y/n)？");
-        input_to("confirm_id", ob);
+        input_to("confirm_id", 0, ob);
 }
 
 private void get_passwd(string pass, object ob)
@@ -136,7 +136,7 @@ private void get_passwd(string pass, object ob)
                 }
                 
 write("您要将另一个连线中的相同人物赶出去，取而代之吗？(y/n)");
-                input_to("confirm_relogin", ob, user);
+                input_to("confirm_relogin", 0, ob, user);
                 return;
         }
 
@@ -162,7 +162,7 @@ private void confirm_relogin(string yn, object ob, object user)
         if( yn=="" ) {
                 
 write("您要将另一个连线中的相同人物赶出去，取而代之吗？(y/n)");
-                input_to("confirm_relogin", ob, user);
+                input_to("confirm_relogin", 0, ob, user);
                 return;
         }       
 
@@ -192,13 +192,13 @@ private void confirm_id(string yn, object ob)
 {
         if( yn=="" ) {
                 write("使用这个名字将会创造一个新的人物，您确定吗(y/n)？");
-                input_to("confirm_id", ob);
+                input_to("confirm_id", 0, ob);
                 return;
         }       
 
         if( yn[0]!='y' && yn[0]!='Y' ) {
                 write("好吧，那麽请重新输入您的英文名字：");
-                input_to("get_id", ob);
+                input_to("get_id", 0, ob);
                 return;
         }
 
@@ -215,14 +215,14 @@ private void confirm_id(string yn, object ob)
 TEXT
         );
         write("您的中文名字：");
-        input_to("get_name", ob);
+        input_to("get_name", 0, ob);
 }
 
 private void get_name(string arg, object ob)
 {
         if( !check_legal_name(arg) ) {
                 write("您的中文名字：");
-                input_to("get_name", ob);
+                input_to("get_name", 0, ob);
                 return;
         }
 
@@ -256,7 +256,7 @@ private void confirm_password(string pass, object ob)
         }
 
         write("您的电子邮件地址：");
-        input_to("get_email",  ob);
+        input_to("get_email", 0, ob);
 }
 
 private void get_email(string email, object ob)
@@ -273,14 +273,14 @@ private void get_email(string email, object ob)
                 return;
 
         write("您要扮演男性(m)的角色或女性(f)的角色？");
-        input_to("get_gender", ob, user);
+        input_to("get_gender", 0, ob, user);
 }
 
 private void get_gender(string gender, object ob, object user)
 {
         if( gender=="" ) {
                 write("您要扮演男性(m)的角色或女性(f)的角色？");
-                input_to("get_gender", ob, user);
+                input_to("get_gender", 0, ob, user);
                 return;
         }
 
@@ -290,7 +290,7 @@ private void get_gender(string gender, object ob, object user)
                 user->set("gender", "女性" );
         else {
                 write("对不起，您只能选择男性(m)或女性(f)的角色：");
-                input_to("get_gender", ob, user);
+                input_to("get_gender", 0, ob, user);
                 return;
         }
 

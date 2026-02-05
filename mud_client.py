@@ -55,6 +55,9 @@ def receive_loop(sock):
     """
     Handles receiving data from the server and printing it to stdout.
     """
+    import codecs
+    decoder = codecs.getincrementaldecoder("utf-8")(errors='replace')
+    
     while True:
         try:
             data = sock.recv(4096)
@@ -66,8 +69,11 @@ def receive_loop(sock):
             # Filter out Telnet protocol commands
             clean_data = filter_telnet_commands(data)
             if clean_data:
-                sys.stdout.buffer.write(clean_data)
-                sys.stdout.flush()
+                # Use incremental decoder to handle split UTF-8 characters across packets
+                text = decoder.decode(clean_data, final=False)
+                if text:
+                    sys.stdout.write(text)
+                    sys.stdout.flush()
         except OSError:
             break
         except Exception as e:
@@ -102,15 +108,11 @@ def main():
         while True:
             # Read from stdin
             # usage of sys.stdin.readline allows us to handle input line by line
-            line = sys.stdin.readline()
-            if not line: # EOF (Ctrl+D)
-                break
+            line = input()
 
-            line_striped = line.strip()
-
-            if line_striped.startswith(':'):
-                line_striped = line_striped[1:]
-                match line_striped:
+            if line.startswith(':'):
+                line = line[1:]
+                match line:
                     case 'clear' | 'cls':
                         os.system('cls' if os.name == 'nt' else 'clear')
                     case _:
@@ -120,9 +122,8 @@ def main():
             
             # Send the line to the server
             # Encode as UTF-8 (standard for this project)
-            # sand raw data to server, not striped data
             try:
-                s.sendall(line.encode('utf-8'))
+                s.sendall((line + '\n').encode('utf-8'))
             except (BrokenPipeError, OSError):
                 # Server closed connection
                 break

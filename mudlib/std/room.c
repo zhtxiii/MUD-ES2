@@ -17,6 +17,7 @@ object make_inventory(string file)
 	object ob;
 
 	ob = new(file);
+	if(!ob) return 0;
 	ob->move(this_object());
 	ob->set("startroom", base_name(this_object()));
 	return ob;
@@ -52,7 +53,8 @@ void reset()
 		switch(ob_list[list[i]]) {
 		case 1:
 			if( !ob[list[i]] ) ob[list[i]] = make_inventory(list[i]);
-			if( environment(ob[list[i]]) != this_object()
+
+			if( ob[list[i]] && environment(ob[list[i]]) != this_object()
 			&&	ob[list[i]]->is_character() ) {
 				if( !ob[list[i]]->return_home(this_object()) )
 					add("no_clean_up", 1);

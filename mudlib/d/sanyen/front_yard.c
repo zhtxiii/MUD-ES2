@@ -17,7 +17,7 @@ LONG
 ]));
 	set("outdoors", "sanyen");
         set("objects", ([
-                __DIR__"npc/monk_guard":2,
+                __DIR__"npc/greeting":2,
         ]) );
 
 	setup();
