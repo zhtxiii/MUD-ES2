@@ -16,10 +16,10 @@ elif [[ $unamestr == 'Darwin' ]]; then
 fi
 echo $! > ${DIR}/mudos.pid
 
-WEBMUD=${ROOT_DIR}/webmud
+# WEBMUD=${ROOT_DIR}/webmud
 
 # run webmud to proxy telnet to web
 # another option:
 # forever start ${WEBMUD}/main.js 8080 4000 -w ${WEBMUD}/www
-node ${WEBMUD}/main.js 8080 4000  -w ${WEBMUD}/www &
-echo $! > ${DIR}/webtelnet.pid
+# node ${WEBMUD}/main.js 8888 4000  -w ${WEBMUD}/www &
+# echo $! > ${DIR}/webtelnet.pid

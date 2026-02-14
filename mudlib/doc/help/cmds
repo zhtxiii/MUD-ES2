@@ -17,6 +17,8 @@
 [其他]
   alias  help  passwd  quit  save  suicide  time  set  unset  to  wizlist
 uptime version scribe title
- 
+
+注意：绝大部分指令参数都是英文小写，使用命令id here可以查看当前位置物品的准确英文名称。单独id命令会显示
+你身上所携带物品的名称。
 □ 如果你是巫师的话，请用 help wizcmds 查询巫师专用指令。
 (Sat 09-02-95)

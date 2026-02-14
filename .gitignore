@@ -11,4 +11,6 @@ mudlib/log/log
 mudlib/log/USAGE
 mudlib/log/author_stats
 mudlib/log/domain_stats
-mudlib/log/tsatic/CRASHES
+mudlib/log/static/CRASHES
+*.pid
+mudlib/data/

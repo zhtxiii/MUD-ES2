@@ -1,7 +1,6 @@
 import threading
 import readline
 import socket
-import select
 import sys
 import os
 
