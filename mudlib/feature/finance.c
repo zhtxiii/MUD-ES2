@@ -11,8 +11,8 @@
 
 int can_afford(int amount)
 {
-        int total;
         object gold, silver, coin;
+        int total, silver_val, coin_val;
 
         gold = present("gold_money");
         silver = present("silver_money");
@@ -25,26 +25,12 @@ int can_afford(int amount)
 
         if( total < amount ) return 0;
 
-        if (coin ) {
-                if ((int)coin->value() < (amount%100))
-                        return 2;
-         } else if (amount%100) return 2;
-        if (silver) {
-                if (coin) {
-                     if ((int)silver->value()+(int)coin->value()
-                                < (amount % 10000))
-                        return 2;
-                }
-        } else if (amount%10000) return 2;
-                
-/*        if( coin ) amount -= (int)coin->value();
-        if( amount <= 0 ) return 1;
-        else if( amount % 100 ) return 2;
+        coin_val = coin ? coin->value() : 0;
+        silver_val = silver ? silver->value() : 0;
 
-        if( silver ) amount -= (int)silver->value();
-        if( amount <= 0 ) return 1;
-        else if( amount % 10000 ) return 2;
-*/
+        if( (silver_val + coin_val) < (amount % 10000) ) return 2;
+        if( coin_val < (amount % 100) ) return 2;
+
         return 1;
 }
 
