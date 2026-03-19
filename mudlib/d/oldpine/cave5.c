@@ -6,7 +6,7 @@ string look_wall ();
 
 void create()
 {
-	set("short", "山洞");
+	set("short", "山洞4");
 	set("long", @LONG
 你现在已经到达山洞的深处了, 耶...东面就是洞口了, 还可以听
 见外面瀑布的水声, 仔细的观察石壁(wall), 可以发现上面有一些用利

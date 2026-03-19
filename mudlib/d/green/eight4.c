@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "迷阵");
+	set("short", "迷阵8");
 	set("long", @LONG
 从这里向四周望去，只见铅云低沉，忽然一道闪电，跟着一阵巨雷，
 远山为之回响，身旁似乎罩着一层神密的薄雾，渐渐地远处的景色

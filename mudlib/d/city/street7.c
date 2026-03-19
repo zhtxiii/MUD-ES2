@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "十字路口");
+	set("short", "十字路口2");
 	set("long", @LONG
 京师的中轴线和北面的主要街道护国道在这里交叉，东西向的护
 国道上人来人往，热闹非凡，南面的皇家祭坛反倒冷冷清清，往北可

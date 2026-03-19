@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "雪亭镇街道");
+	set("short", "雪亭镇街道6");
 	set("long", @LONG
 这里是雪亭镇的街道，往北是一个热闹的广场，南边是条小路通往
 一座林子，东边则有一条小径沿著山腰通往山上，往西是一条比较窄的

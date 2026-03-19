@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路6");
 	set("long", @LONG
 小路的两边种了一排垂柳，西边玉螺湖上的阵阵雾气透过柳枝飘散过
 来。你的东边是一大片绿油油的瓜地，一条大沟横在小路和瓜地之间，你

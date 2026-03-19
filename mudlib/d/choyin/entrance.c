@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "曼雩台");
+	set("short", "曼雩台2");
 	set("long", @LONG
 这里是雨桥庄西边的曼雩台，也是乔阴县城的文人墨客时常聚集谈
 论诗文的地方，台宽约十丈，西边是连接乔阴县城的翠柳曲桥，从翠柳

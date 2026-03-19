@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "白石阶梯");
+	set("short", "白石阶梯2");
 	set("long", @LONG
 你现在正走在一道依著山壁而建的白石阶梯上，随著阶梯越爬越高
 ，从这里已经可以望见西面山顶上竖立在虹台中央的「擎天柱」，阶梯

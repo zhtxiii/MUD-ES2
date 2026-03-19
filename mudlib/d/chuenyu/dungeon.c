@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "刑房");
+        set("short", "刑房3");
         set("long", @LONG
 你处在一个阴湿的地牢里。地牢的角落里堆着一些干草，干草上沾满了
 暗红色的血迹。许多骷髅被生锈的铁链绑在墙上。偶尔之间，你还可以听到

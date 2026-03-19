@@ -7,7 +7,7 @@ string look_stone();
 
 void create()
 {
-	set("short", "秘密通道");
+	set("short", "秘密通道2");
 	set("long", @LONG
     你现在正站在一个阴森森的山洞之中, 一条昂首吐信的金银花蛇,
 爬伏在一块突出的大青石(stone)上, 令人望而生畏, 也许你该回头逃跑了。

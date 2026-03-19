@@ -3,7 +3,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "西厢房走道");
+   set("short", "西厢房走道2");
 	set("long", @LONG
 你走在西厢房走道上。长长的走道中，纯金成的长灯架上挂了一排
 饰丽的宫灯! 走道两旁摆设了许多奇花异草，空气中弥漫一种淡淡的香

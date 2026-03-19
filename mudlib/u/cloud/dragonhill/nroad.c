@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "黄土路");
+        set("short", "黄土路2");
         set("long", @LONG
 这里是雪亭镇通往绮云镇的必经之路。北面就是雪亭镇，南面通往
 卧龙岗。早先官府想在此修条大路连接两镇，无奈地势所限，加上卧龙

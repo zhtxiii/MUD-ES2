@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "山涧之中");
+	set("short", "山涧之中2");
 	set("long", @LONG
 你现在正站在一条山涧中的岩石上，几股泉水正从你脚边流过，水
 花溅得四处飞散，南边是一个深不见底的水潭(lake)，两边的山壁看起

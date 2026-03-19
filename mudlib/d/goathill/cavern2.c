@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "岩洞");
+	set("short", "岩洞2");
 	set("long", @LONG
 你现在正在一个黑漆漆的岩洞中摸索前进，西南边隐隐有些光亮，
 想必是洞穴的出口，东边似乎有些滴水的声音，不过你得走过去才能听

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "经楼");
+	set("short", "经楼2");
 	set("long", @LONG
 这里是灵心观中收藏书籍的地方, 四周的书架上堆了满满的书。
 有些书已经旧的纸张都泛黄了, 摸一摸可能就会散掉甚至变成飞灰。

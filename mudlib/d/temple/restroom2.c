@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "厢房");
+	set("short", "厢房2");
 	set("long", @LONG
 这是一间供香客或其他江湖同道休息挂单的客房, 屋子里只是简
 单地摆放著几件家俱。你闻到天井中传来淡淡的花香。

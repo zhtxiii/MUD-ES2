@@ -3,7 +3,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "厨房");
+   set("short", "厨房5");
 	set("long", @LONG
 你走进厨房，看到有好多的烹饪用品与设备，小蒸笼、大锅、平  
 炊灶、烧饭炉等，五花八门，式样齐全。旁边的大仓储中，更放满各

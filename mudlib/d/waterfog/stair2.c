@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "白石阶梯");
+	set("short", "白石阶梯7");
 	set("long", @LONG
 你现在正走在一条长长的白石阶梯上，这些建造阶梯的白石出产于
 东海滨的裂瓶山，距离此地有近千里之遥，而且虽然年代久远，仍然可

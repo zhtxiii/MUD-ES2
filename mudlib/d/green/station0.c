@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "工作站");
+	set("short", "工作站2");
 	set("long", @LONG
 这里是采石场在村口的工作站，一栋小小的木屋立在东边，旁边是一
 条上山的斜坡。路旁有一口井。空地上停著几辆载满石料的车。往西是一

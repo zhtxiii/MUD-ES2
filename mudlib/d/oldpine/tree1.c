@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "大松树上");
+	set("short", "大松树上2");
 	set("long", @LONG
 你现在正攀附在一株大松树的树干上，从这里可以很清楚地望见树
 下的一切动静，而不被人发觉，似乎是个干偷鸡摸狗勾当的好地方。

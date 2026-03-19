@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "内书房");
+    set("short", "内书房2");
 	set("long", @LONG
 这是一间安静的书房, 光线适中。近窗边有一张桌子，旁有书橱! 
 还有一个古琴放在平台上! 墙上除了美丽的饰物外，还挂了一些书画 

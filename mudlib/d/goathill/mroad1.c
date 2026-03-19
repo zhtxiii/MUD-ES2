@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "山路");
+	set("short", "山路8");
 	set("long", @LONG
 你现在正走在一条崎岖的山路上，凹凹凸凸的山石刺得你的脚底隐
 隐生疼，山路往南不远处通往一个山腰的台地，这一带最大的镇甸就位

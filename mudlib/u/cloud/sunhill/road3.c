@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "盘山小径");
+        set("short", "盘山小径3");
         set("long", @LONG
 这是条崎岖的黄土小径。
 LONG

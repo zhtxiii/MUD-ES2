@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "迷阵");
+	set("short", "迷阵5");
 	set("long", @LONG
 从这里向四周望去，只见寒风阵阵，奇寒澈骨，如入北极风洞，四周
 似乎罩着一层神密的薄雾，风吹不散，渐渐地远处的景色模糊起来，你

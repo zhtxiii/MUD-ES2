@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short","山路");
+	set("short","山路3");
 	set("long",@LONG
 这是一段荒芜的山路，显然很少有人走过，东面是陡峭的
 山壁，山壁上零星的长着几棵小树，西面是深不见底的悬崖，

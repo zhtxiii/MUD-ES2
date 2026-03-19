@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小路");
+        set("short", "小路3");
         set("long",@LONG
 你走在尚书府的一条僻静的小路上。这条小路连接着花园和一间
 废弃的杂货屋，平常很少有人来此。东面的花园渐渐地远了，西面的

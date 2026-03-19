@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "奈何桥");
+	set("short", "奈何桥2");
 	set("long", @LONG
 你现在正站在一条极长的石桥上，桥头一块石碑上面刻著「奈何桥
 」三个古篆，东、西两面都是大雾，连桥底下是不是水都看不到，浓雾

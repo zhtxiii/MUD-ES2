@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "三叉路口");
+	set("short", "三叉路口2");
 	set("long", @LONG
 你来到一条三叉路口, 往东看去是另一条更小更窄的黄土路, 主要
 道路是南北向的, 西边有一栋民宅.

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "竹林道");
+	set("short", "竹林道2");
 	set("long", @LONG
 此处的竹林比起入口的竹子更为高大耸直，也有些小动物在这四
 周跳来跳去，跑来跑去的，更是生气盎然，不时有也黄莺唱吟著美妙

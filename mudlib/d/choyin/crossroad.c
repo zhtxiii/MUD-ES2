@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "十字路口");
+	set("short", "十字路口3");
 	set("long", @LONG
 这里是昌平街跟承安街的交叉路口，往南就是乔阴县城的南门，往
 北不远处则是衙门的所在地，乔阴县到了这里显得格外安静，路人大多

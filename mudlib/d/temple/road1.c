@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小径");
+	set("short", "青石小径2");
 	set("long", @LONG
 一条铺著青石板的小径, 两侧高大的松树, 偶有松针缓缓飘落。
 树干上布满了青苔, 甚至还有些蔓延到石板上。南边通往回廊, 西侧

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "雪亭镇街道");
+	set("short", "雪亭镇街道2");
 	set("long", @LONG
 你现在正走在雪亭镇的街道上，东边不远处有一间高大的院子，门
 口立著一根粗大的旗杆，旗子上写著「淳风武馆」，往南只听得人声鼎

@@ -2,7 +2,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小径");
+        set("short", "小径3");
         set("long", @LONG
 条蜿蜒的小径通往东南方, 在你的东面是一道峭壁, 而在你的
 南边是一片浓密的竹林。

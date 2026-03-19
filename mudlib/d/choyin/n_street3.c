@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "福林大街");
+	set("short", "福林大街5");
 	set("long", @LONG
 你现在正走在一条宽敞的大街上，街道往北边笔直地延伸，南边则
 是一个隆起的石台，你可以看见石台前有块石碑，上书「树王坟」三个

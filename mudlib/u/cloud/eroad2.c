@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "绮云镇街道");
+        set("short", "绮云镇街道4");
         set("long", @LONG
 这里是绮云镇东，通往茶场的路。南边是一家有名的大镖局 -- 振
 远镖局。北面是绮云张家的宅院。

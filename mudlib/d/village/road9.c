@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路8");
 	set("long", @LONG
 两只小燕子落到柳枝上，叽叽喳喳叫个不停，它们的家可能在附近。
 在小路的西面是一片绿油油的稻田，几个农民在田间忙碌；东面是地主田

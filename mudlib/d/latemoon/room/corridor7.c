@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "内厅");
+   set("short", "内厅4");
 	set("long", @LONG
 你进了内厅，迎面挂著葱绿洒花软帘，掀帘进去，抬头一看，
 只见四面墙壁，玲珑剔透，琴剑书画，挂在墙上。锦笼纱罩，金彩

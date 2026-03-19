@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "回廊");
+	set("short", "回廊4");
 	set("long", @LONG
 你现在正走在一条回廊上, 东北方是一座花木扶苏的天井, 穿过
 东边的圆形拱门就可以回到大殿。

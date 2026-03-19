@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "岩洞");
+	set("short", "岩洞3");
 	set("long", @LONG
 这里是一处阴暗的岩洞，等你走近这个岩洞才发现原来是死路，东
 北边隐隐透出几道微光，想必是洞穴的出口，地上一滩滩暗黄色的黏稠

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "石板路");
+	set("short", "石板路2");
 	set("long", @LONG
 这是一条平整的石板路, 上面隐约可以看见两道很深的车轮, 看来
 是用来作运输用途的道路. 往西是通往山下的路, 往东你可以看到一些

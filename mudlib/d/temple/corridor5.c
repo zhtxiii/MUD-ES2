@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "回廊");
+	set("short", "回廊7");
 	set("long", @LONG
 你现在走在围绕著天井的回廊上, 回廊往东西两侧延伸, 南边就
 是天井, 你也许可以走过去赏赏花, 散散心。在你的北方, 走过那扇

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "京师西街");
+        set("short", "京师西街3");
         set("long", @LONG
 你现在正走在京师的街道上。往东走便是紫禁城的后门--神武门
 ，南面似乎有一家酒楼，酒肉的香味一阵阵飘来。北边是一个废园，

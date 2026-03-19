@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "松树林");
+	set("short", "松树林6");
 	set("long", @LONG
 你现在正站在一个松树林里，嗯....这是一个松树林....你所知就
 这么多，茂密的松树遮蔽了整个天空，使你连方向都弄不清楚，最好在

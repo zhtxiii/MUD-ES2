@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "迷阵");
+	set("short", "迷阵6");
 	set("long", @LONG
 从这里向四周望去，只见长天一碧，沃野千里，正自心旷神怡，
 那层神密的薄雾又起，渐渐地远处的景色模糊起来，你觉得自

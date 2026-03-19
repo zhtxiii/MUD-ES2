@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "花岗石街");
+        set("short", "花岗石街2");
         set("long", @LONG
 这是通往城堡的石街，整条石街全是用巨大的花岗岩砌成的。
 单这条石路就足已表明城堡主人的富有和气势。

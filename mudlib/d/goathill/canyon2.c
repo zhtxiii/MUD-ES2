@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "峡谷");
+	set("short", "峡谷2");
 	set("long", @LONG
 你现在正走在一条狭长的深谷之中，东西两面都是高不可攀的峭壁
 ，往南沿著谷底一条乾涸的山涧可以通往峡谷的出口，北边的峭壁从这

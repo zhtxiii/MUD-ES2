@@ -2,7 +2,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "刑房");
+        set("short", "刑房2");
         set("long", @LONG
 整间刑房已被乾曷的血迹然成暗红色。散发着扑鼻的腥臭。墙上挂满了
 各式各样的邢具。刑房的地上散落着生锈的铁链和破碎的骷髅。偶尔之间，

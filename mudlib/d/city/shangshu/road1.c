@@ -6,7 +6,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "小径");
+        set("short", "小径2");
         set("long",@LONG
 尚书府的小径走到这似乎到了尽头。小径的东边是一间小屋，平
 时房门总是关的，每天按时由一名又聋又哑的仆役送饭进去，其他人

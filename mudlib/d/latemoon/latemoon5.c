@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-    set("short","后院走道");
+    set("short","后院走道2");
 	set("long", @LONG
 你走在一条长廊上，两旁都是庭台堂庑，廊上弥漫著一股
 香郁的气息，廊下是由青石砖铺成，一边接后厅内院，一边的

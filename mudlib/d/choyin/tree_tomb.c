@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "树王坟");
+	set("short", "树王坟2");
 	set("long", @LONG
 你现在来到了著名的「树王坟」前，这里是个高台，中央约两丈见方
 的地上有一截巨大的树桩，少说有三、四十人合抱那么粗，树桩中间有一

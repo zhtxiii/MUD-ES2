@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "白石阶梯");
+	set("short", "白石阶梯4");
 	set("long", @LONG
 你正走在一道白石阶梯上，这道阶梯依著山壁而建，东边隔著一个
 深不见底的山谷可以望见对面傲立在山巅之上的水烟阁，每当清晨山谷

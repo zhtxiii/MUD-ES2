@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "曲桥");
+	set("short", "曲桥5");
 	set("long", @LONG
 这是一座弯弯曲曲的曲桥，横过翠柳湖连接东岸的雨桥庄跟西岸的
 乔阴县城，从这里可以欣赏翠柳湖的美景，许多睡莲散布在桥墩四周，

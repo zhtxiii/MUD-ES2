@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "京师街道");
+	set("short", "京师街道8");
 	set("long", @LONG
 你现在正走在京师的大街上，往东可以隐约看到城门铜扣上的反
 光，在你的北边是京城唯一的钱庄，往西有熙熙攘攘的人群，偶尔还

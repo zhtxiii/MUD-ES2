@@ -2,7 +2,7 @@
 inherit ROOM;
 void create()
 {
-        set("short", "京师街道");
+        set("short", "京师街道4");
         set("long", @LONG
 这里是京师的大街，青石铺道，街面很干净。东边是京师的热
 闹场所天桥，来到京师可不能不去哦。南边是京师的刑场，逢上处

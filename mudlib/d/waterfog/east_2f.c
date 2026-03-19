@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "东侧厅");
+	set("short", "东侧厅2");
 	set("long", @LONG
 这里是水烟阁东侧厅的二楼，由于侧厅是挑高建筑，因此这里只有
 一条约七、八尺宽的走道连接楼梯与往西的门。

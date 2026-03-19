@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路4");
 	set("long", @LONG
 青石小路在这里分成两条，一条继续向西延伸，另一条伸向南面，北
 面是一个鲜花盛开的小花园，闻到阵阵花香，你不仅心旷神怡。西面遥远

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "刘家小房");
+	set("short", "刘家小房2");
 	set("long", @LONG
 这是一所很破旧的木屋。每当山风吹来，都会发出“吱吱呀呀”
 的声音。南侧是一个小小的厨房。木屋的后面是一个精巧的花园，花

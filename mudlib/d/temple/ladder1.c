@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "石英岩石阶");
+	set("short", "石英岩石阶2");
 	set("long", @LONG
 长长的阶梯也终将到了尽头, 阶梯的尽头矗立著一座山门, 山门
 上龙飞凤舞地写了三个字, 笔力苍劲有力显得气势非凡。山风吹来带

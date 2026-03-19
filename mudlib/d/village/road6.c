@@ -6,7 +6,7 @@ void roadgone();
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路2");
 	set("long", @LONG
 青石小路在这里到了尽头，被茂密的茅草(grass)挡住了去路。一阵
 东风吹过，飘来阵阵花香，南面是面积很大的湖泊，湖上的水汽映的西边

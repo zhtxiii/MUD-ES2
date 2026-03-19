@@ -3,7 +3,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "膳房");
+   set("short", "膳房2");
 	set("long", @LONG
 这是一间膳房，中央摆了二张大圆桌。周围三十二张雕饰木藤椅。
 平常庄内上下用膳的地方，东边是厨房，西边则是大饭厅，这虽然不

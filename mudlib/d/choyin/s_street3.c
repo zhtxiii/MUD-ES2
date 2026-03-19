@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "福林大街");
+	set("short", "福林大街2");
 	set("long", @LONG
 这里是乔阴县城的福林大街，往北是一座高台，台上便是著名的「
 树王坟」，打从这里往南就是乔阴县最热闹的街道，接上来往的行商贩

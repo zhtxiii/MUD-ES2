@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "空房间");
+	set("short", "空房间2");
 	set("long", @LONG
 这是一间什麽也没有的空房间。
 LONG

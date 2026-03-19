@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "林间小路");
+	set("short", "林间小路3");
 	set("long", @LONG
 你现在正走在一条林间的小路，往北不远处走出这座林子就是雪亭
 镇，小路两旁长满了许多高耸的松树，雪亭镇的居民都把这里叫做「老

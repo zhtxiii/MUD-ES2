@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "雪亭镇街道");
+	set("short", "雪亭镇街道3");
 	set("long", @LONG
 这里是雪亭镇的大街，一条小巷子通往东边，西边则是一间驿站，
 由于雪亭镇来往的商旅、官员并不很多，因此虽然是官府的驿站，也接

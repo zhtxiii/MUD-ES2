@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "寒谷");
+	set("short", "寒谷3");
 	set("long", @LONG
 两面皆为峭壁，光滑无物。一阵寒谷幽香，沁人心脾，却不知来自何方。。。
 LONG

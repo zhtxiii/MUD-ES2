@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "民宅");
+	set("short", "民宅2");
 	set("long", @LONG
 这是一间简陋的民宅，阴暗窄小的屋内散著一地的柴火和各式工具。
 屋角的石炉上闪著微弱的火光，一锅不知是什么的东西正冒出阵阵香味。

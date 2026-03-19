@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "天井");
+	set("short", "天井2");
 	set("long", @LONG
 你正站在灵心观的天井里, 这里种植著一些花草树木, 在西北角
 落里有著一口水井。北边就是供俸茅山派历代掌门人的地方, 南边则

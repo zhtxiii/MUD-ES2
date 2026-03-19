@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "西侧厅");
+	set("short", "西侧厅2");
 	set("long", @LONG
 这里是水烟阁西侧的厅院，一道白石梯从这里通往二楼，往北是仆
 役的卧房跟柴房，南边是出水烟阁的侧门，往西则是一个可以眺望山谷

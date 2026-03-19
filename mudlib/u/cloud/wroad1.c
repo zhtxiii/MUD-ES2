@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "绮云镇街道");
+        set("short", "绮云镇街道3");
         set("long", @LONG
 东边青板石铺的路与向西的碎石小径在这里汇合。西面仿佛是座庄
 院，似可听到曲乐声，却又分辨不清; 南面是家私塾。 

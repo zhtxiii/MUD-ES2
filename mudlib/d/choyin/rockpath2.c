@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路10");
 	set("long", @LONG
     铺路的青石采自桐柏山.因行人稀少,已快被茅草遮没.
 LONG

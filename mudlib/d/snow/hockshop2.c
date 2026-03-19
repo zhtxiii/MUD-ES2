@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "储藏室");
+	set("short", "储藏室2");
 	set("long", @LONG
 这里是丰登当铺的储藏室，有时候当铺里的大朝奉会把铺里存不下
 的死当货物拿出来拍卖，不过你现在只能看见一个个锁著的箱子。往西

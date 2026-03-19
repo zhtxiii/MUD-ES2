@@ -6,7 +6,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "老松寨");
+	set("short", "老松寨2");
 	set("long", @LONG
 这里应该是老松寨了，虽然围绕著你的墙都是木头搭成的，但是仔
 细一看，在许多险要的位置都放了不少沙包石堆，后面显然是埋伏人手

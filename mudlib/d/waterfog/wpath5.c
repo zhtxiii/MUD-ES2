@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "白石阶梯");
+	set("short", "白石阶梯8");
 	set("long", @LONG
 你现在走在一道依著山壁而建的白石阶梯上，通过西边不远处的葬
 剑亭，就是虹台的入口，东边和北边都是深不见底的深谷，隔著深谷，

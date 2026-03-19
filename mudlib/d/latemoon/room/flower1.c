@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "内厅穿堂");
+   set("short", "内厅穿堂2");
 	set("long", @LONG
 通过『 垂花门 』便是往后院。垂花门为男女之门限，古来女
 人就有「大门不出，二门不迈」的谚语，于是二门堪称为男女门限

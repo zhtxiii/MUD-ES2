@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "火龙将军庙");
+	set("short", "火龙将军庙2");
 	set("long", @LONG
 这里就是奉祀火龙将军的大殿，火龙将军高大威武的神像(statue)
 就立在你的面前，旁边还有火龙将军的部属虎豹熊鹰四位将军，你现在

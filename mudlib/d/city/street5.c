@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "京师西街");
+        set("short", "京师西街2");
         set("long",@LONG 
 你现在正走在京师的街道上，西边是京师最有名的“太白酒楼”，
 酒楼里三教九流的人物都有，嘈杂声不绝于耳。东边紧邻着紫禁城的

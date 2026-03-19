@@ -2,7 +2,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short","空房间");
+	set("short","空房间3");
 	set("long",@LONG
 这里是 ES2 的「离岛」管训所, 如果你被送到这里, 表示:
 你违反了游戏规则, 请好好的反省一下你的所作所为, 想离

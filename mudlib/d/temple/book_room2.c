@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "经楼");
+	set("short", "经楼3");
 	set("long", @LONG
 上了楼来, 首先你看到一幅张天师的画像挂在对面的墙上, 画像
 的下方摆著一张覆著红布的桌子, 桌上整齐地放著茅山的镇教秘籍。

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "三叉路口");
+	set("short", "三叉路口3");
 	set("long", @LONG
 这里已经离天驼关很远了，顺着黄土大道向南走，绿色渐渐多了起
 来，树木透着喜人的绿，放眼望去青山绿水，好一派关内景色，你能看

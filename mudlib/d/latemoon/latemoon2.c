@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short","内厅");
+	set("short","内厅2");
 	set("long", @LONG
 走入内厅，你看到袭地铺满红毯。四面相对十二张雕漆椅上，都
 是一色灰鼠椅□小褥，厅中摆了小屏风，四周挂满山水墨画。一个木

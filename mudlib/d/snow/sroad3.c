@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石官道");
+	set("short", "青石官道2");
 	set("long", @LONG
 这是一条宽敞坚实的青石板铺成的大道，路上车马的痕迹已经在路
 面上留下一条条明显的凹痕，往东是一条较小的街道通往雪亭镇，大路

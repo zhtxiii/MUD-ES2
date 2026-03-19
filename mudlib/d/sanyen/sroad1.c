@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "山路");
+	set("short", "山路5");
 	set("long", @LONG
 这是一条铺著生满青苔大石的山路，但是路面大概常有人行走，因
 此倒也并不湿滑，往南是一段石阶缓缓下山，往北则是通往山中的山路

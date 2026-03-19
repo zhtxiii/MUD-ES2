@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "雪亭镇街道");
+	set("short", "雪亭镇街道4");
 	set("long", @LONG
 这里是雪亭镇的街道，你的北边有一家客栈，从这里就可以听到客
 栈里人们饮酒谈笑的声音，街道往东不远处有个转角往北，如果你往东

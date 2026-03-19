@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石官道");
+	set("short", "青石官道4");
 	set("long", @LONG
 这是一条宽敞坚实的青石大道, 大道沿著山腰往南向山下延伸, 东
 边是一条石英岩石阶蜿蜒往山上而去。在石阶的尽头, 是一座颇为雄伟

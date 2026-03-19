@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石官道");
+	set("short", "青石官道7");
 	set("long", @LONG
 这是一条宽敞坚实的青石板大道，从这里已经可以望见北边山腰上
 水烟阁琉璃色的屋瓦，映著山上茂密的枫树林，显得十分诗情画意，由

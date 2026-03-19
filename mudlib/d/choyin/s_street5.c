@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "承安街");
+	set("short", "承安街2");
 	set("long", @LONG
 这里是乔阴县城南的承安街，往东可以通往热闹的南门广场，西边
 的路口则是通往县府衙门的昌平街，街道北边是一些贩卖日常用具的商

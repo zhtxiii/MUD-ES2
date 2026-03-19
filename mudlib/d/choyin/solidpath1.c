@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "土路");
+	set("short", "土路2");
 	set("long", @LONG
 黄土铺就的小路.阴雨天,泥泞难行.往南就上山了.
 LONG

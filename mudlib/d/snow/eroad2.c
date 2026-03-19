@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "黄土小径");
+	set("short", "黄土小径2");
 	set("long", @LONG
 这是一条普通的黄土小径，小径往西南通往一处山间的平地，从这
 里可以望见不少房屋错落在平地上，往北则一路上山。

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "张百万家");
+	set("short", "张百万家2");
 	set("long", @LONG
 你现在正站在张百万家里
     靠近门口的地方有一块乌木雕成的招牌(sign)。

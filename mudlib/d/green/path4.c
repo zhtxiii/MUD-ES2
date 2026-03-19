@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "小路");
+	set("short", "小路2");
 	set("long", @LONG
 你走在一条不算宽的碎石路上, 往北是一个交叉路口. 东边有一栋
 木造建筑, 看来相当的破旧, 一片快要散掉似的木牌悬挂在门口, 上面

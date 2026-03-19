@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short","石室");
+	set("short","石室2");
 	set("long",@LONG
 这是一间石室，室内透着一种说不清的神秘力量，西边有两张石椅
 东首墙上挂这一把木剑。北边通往大厅，但墙上写了两行字，走近仔细

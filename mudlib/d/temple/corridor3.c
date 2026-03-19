@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "回廊");
+	set("short", "回廊2");
 	set("long", @LONG
 你正站在回廊转角的地方, 回廊从这往西及南边而去。在走廊
 的东侧是一排厢房。北方是一条铺著青石板的小径。

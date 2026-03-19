@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "福林大街");
+	set("short", "福林大街4");
 	set("long", @LONG
 这里是乔阴县城的福林大街，东首一栋雕梁画栋，美仑美奂的华厦
 便是乔阴县最大的酒楼「福林楼」，不但乔阴县城的富商大贾常来此楼

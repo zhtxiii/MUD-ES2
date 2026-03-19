@@ -6,7 +6,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "雪亭镇街道");
+	set("short", "雪亭镇街道5");
 	set("long", @LONG
 这里是雪亭镇的大街，东边有一栋陈旧的建筑，看起来像是什么店
 铺，但是并没有任何招牌，只有一扇门(door)上面写著一个大大的「当

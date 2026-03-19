@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "客房");
+	set("short", "客房3");
 	set("long", @LONG
 这里是一间布置得相当雅致的厢房，从窗子可以看到北边的天井跟
 南边的庭园中各式各样的奇花异草，以及他们所带来的淡淡香气，厢房

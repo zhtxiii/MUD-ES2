@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "西大街");
+	set("short", "西大街3");
 	set("long", @LONG
 这里是乔阴县城的西大街.
 LONG

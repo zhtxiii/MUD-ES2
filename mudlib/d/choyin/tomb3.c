@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "树王坟内部");
+	set("short", "树王坟内部2");
 	set("long", @LONG
 这里是树王坟树洞的内部，你在这里可以闻到一股浓郁的檀香，奇
 怪的是，这棵大树并不是檀木，却不知这股香味从哪里来？往南的出口

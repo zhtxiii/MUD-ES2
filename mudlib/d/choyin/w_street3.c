@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "西大街");
+	set("short", "西大街4");
 	set("long", @LONG
 这里是乔阴县城的西大街，东边不远处的石台便是远近驰名的「树
 王坟」，西大街往西一直通往西城门，街道两边有许多的商店，街上人

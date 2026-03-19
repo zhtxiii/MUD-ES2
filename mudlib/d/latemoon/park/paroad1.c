@@ -2,7 +2,7 @@ inherit ROOM;
 
 void create()
 {
-   set("short", "甬路");
+   set("short", "甬路2");
 	set("long", @LONG
 你走在石子墁的花园甬路上，只见两边翠竹夹路，土地下苍苔
 布满，往东北你看到凤尾森森，龙吟细细，通往暖香榭。南面则是

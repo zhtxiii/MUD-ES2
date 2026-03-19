@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "后殿");
+	set("short", "后殿2");
 	set("long", @LONG
 你正站在灵心观的后殿, 正中央供奉著茅山派开山祖师张天师的
 画像, 在画像的下方摆放著当年张天师收妖伏魔时所用的宝剑。剑的

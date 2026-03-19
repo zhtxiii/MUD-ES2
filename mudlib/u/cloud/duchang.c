@@ -8,7 +8,7 @@ string look_sign(object me);
 
 void create()
 {
-        set("short", "赌场");
+        set("short", "赌场2");
 	set("long", @LONG
 你现在正站在赌场里。靠近门口的地方有一块乌木雕成的招牌(sign)。
 LONG

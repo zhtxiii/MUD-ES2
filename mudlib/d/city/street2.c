@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "京师东街");
+        set("short", "京师东街3");
         set("long", @LONG
 你走在京师东街的中段。这里夹在紫禁城城墙与尚书府院墙之间
 ，南向的道路通向午门和尚书府的大门，而北方不远处振远总局的旗

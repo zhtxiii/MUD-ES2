@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "青石小路");
+	set("short", "青石小路7");
 	set("long", @LONG
 这是一条通向一个村庄的青石小路。路口立着一个小牌子(tablet)，
 牌子看起来经过长时间的日晒雨淋，已破烂不堪。东南向望去好像是片

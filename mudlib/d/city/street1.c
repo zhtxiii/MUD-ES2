@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "京师东街");
+        set("short", "京师东街2");
         set("long", @LONG
 这里是京师东街的北段。往北走有一个大院子，院里立着根老高
 老高的旗杆，上书一个斗大的「镖」字，隔很远就可以看见。镖局的

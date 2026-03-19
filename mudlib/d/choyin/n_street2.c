@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "福林大街");
+	set("short", "福林大街3");
 	set("long", @LONG
 你现在正走在一条宽敞的街道上，这里是乔阴县联通南北城门的福
 林大街，街道从这里向南北延伸，往北远远地可以望见北门的石牌楼，

@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "林间小路");
+	set("short", "林间小路5");
 	set("long", @LONG
 你现在正走在一片松树林中的小路上，小路往北通往一处空地，一
 株巨大无朋的松树矗立在空地中央，小路往南是一条长长的下坡道，这

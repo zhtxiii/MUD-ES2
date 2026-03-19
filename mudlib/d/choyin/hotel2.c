@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "福林酒楼");
+	set("short", "福林酒楼2");
 	set("long", @LONG
 这里是福林酒楼的二楼雅座，这里的客人大多衣冠鲜明，若不是富
 豪巨绅，便是秀才举人，使你不知不觉跟著斯文起来，从这里可以眺望
