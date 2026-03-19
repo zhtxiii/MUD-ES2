@@ -8,12 +8,9 @@ void create()
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
-    "east" :__DIR__"bamboo4",
-    "west" :__DIR__"bamboo3",
-    "north" :__DIR__"bamboo3",
-    "south" :__DIR__"bamboo1",
-
-]));
+          "west" :__DIR__"bamboo",
+          "north" :__DIR__"bamboo4",
+        ]));
         set("outdoors", "latemoon");
         setup();
         replace_program(ROOM);

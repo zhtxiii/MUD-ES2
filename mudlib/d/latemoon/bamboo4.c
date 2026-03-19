@@ -8,12 +8,9 @@ void create()
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
-       "west" :__DIR__"bamboo3",
-       "east" :__DIR__"bamboo",
-       "north" :__DIR__"bamboo1",
-       "south" :__DIR__"bamboo2",
-
-]));
+          "south" :__DIR__"bamboo2",
+          "west" :__DIR__"bamboo3",
+        ]));
         set("objects", ([
             "/d/latemoon/obj/bamboo" : 1 ,
         ]) );
