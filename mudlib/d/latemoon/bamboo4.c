@@ -7,9 +7,10 @@ void create()
 这是一座茂密的竹林。当你进入后彷佛迷失了方向！
 LONG
         );
-        set("exits", ([ /* sizeof() == 2 */
-          "south" :__DIR__"bamboo2",
-          "west" :__DIR__"bamboo3",
+        set("exits", ([ /* sizeof() == 4 */
+                "west" : __DIR__"bamboo",
+                "north" : __DIR__"bamboo1",
+                "south" : __DIR__"bamboo3",
         ]));
         set("objects", ([
             "/d/latemoon/obj/bamboo" : 1 ,

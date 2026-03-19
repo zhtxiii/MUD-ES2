@@ -8,8 +8,8 @@ void create()
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
-          "west" :__DIR__"bamboo",
-          "north" :__DIR__"bamboo4",
+                "east" : __DIR__"bamboo",
+                "north" : __DIR__"bamboo3",
         ]));
         set("outdoors", "latemoon");
         setup();
