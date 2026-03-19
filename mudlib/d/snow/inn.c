@@ -36,6 +36,7 @@ LONG
     set("objects", ([
     __DIR__"npc/traveller" : 2,
     __DIR__"npc/waiter" : 1,
+    "/obj/money/coin" : 99,
     ]) );
 
 	create_door("northwest", "木门", "southeast", DOOR_CLOSED);

@@ -9,7 +9,7 @@ void create()
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */
-          "northwest" :__DIR__"sroad2",
+          "west" :__DIR__"sroad2",
           "east" :__DIR__"sroad4",
 ]));
 
