@@ -17,7 +17,7 @@ LONG
 
 	set("exits", ([ /* sizeof() == 1 */
 		"west" :	"/d/choyin/bridge5",
-		"east" :	__DIR__"taolin",
+		/* "east" :	__DIR__"taolin",*/
 ]));
 
         set("objects", ([

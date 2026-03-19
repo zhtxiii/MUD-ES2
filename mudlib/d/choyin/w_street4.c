@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "西大街3");
+	set("short", "西大街4");
 	set("long", @LONG
 这里是乔阴县城的西大街.
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
-              "south" : __DIR__"w_street2",
-              "east" : __DIR__"nw_street",
+              "east" : __DIR__"w_street2",
+              "north" : __DIR__"nw_street",
 ]));
 	set("no_clean_up", 0);
 

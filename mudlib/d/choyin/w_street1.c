@@ -7,7 +7,7 @@ int do_check ();
 
 void create()
 {
-        set("short", "西大街2");
+        set("short", "西大街");
         set("long", @LONG
 这里是乔阴县城的西大街，西边就是县城的西门，一座巨大的牌楼
 上刻著「西门」二字，往北有一条小巷，南边则是一间书肆，街道中央
@@ -22,7 +22,7 @@ LONG
 ",
 ]));
         set("exits", ([ /* sizeof() == 1 */
-  "east" : __DIR__"w_street2",
+  "south" : __DIR__"w_street3",
 ]));
         set("no_clean_up", 0);
         set("outdoors", "choyin");

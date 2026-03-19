@@ -10,7 +10,7 @@ LONG
         );
         set("exits", ([ /* sizeof() == 2 */
            "north" :__DIR__"sroad4",
-           "south" :__DIR__"bamboo3",
+           /*"south" :__DIR__"bamboo3",*/
            "east" : "/d/sanyen/tunnel",
         ]));
 

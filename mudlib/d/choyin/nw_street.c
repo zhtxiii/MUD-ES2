@@ -12,8 +12,8 @@ void create()
 LONG
 	);
 	set("exits", ([ /* sizeof() == 3 */
-  "west" : __DIR__"w_street4",
-  "south" : __DIR__"w_street3",
+  /*"west" : __DIR__"w_street4",*/
+  "south" : __DIR__"w_street4",
   "east" : __DIR__"n_street3",
 ]));
 	set("no_clean_up", 0);

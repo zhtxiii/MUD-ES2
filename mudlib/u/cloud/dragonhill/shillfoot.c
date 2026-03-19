@@ -11,7 +11,7 @@ LONG
         );
         set("exits", ([ /* sizeof() == 4 */
   "northup" : __DIR__"hummock",
-  "southeast" : "/u/cloud/entrance"
+  "southeast" : __DIR__"sroad"
 ]));
         set("outdoors", "dragonhill");
 

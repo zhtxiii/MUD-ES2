@@ -4,7 +4,7 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "西大街");
+	set("short", "西大街2");
 	set("long", @LONG
 这里是乔阴县城的西大街，西门就在你的西边几十丈外，望东则是
 通往乔阴县的著名地标「树王坟」，街上有许多商店，北边是一家大酒
@@ -12,7 +12,7 @@ void create()
 LONG
 	);
 	set("exits", ([ /* sizeof() == 2 */
-  "west" : __DIR__"w_street1",
+  "west" : __DIR__"w_street4",
   "east" : __DIR__"w_street3",
 ]));
 	set("no_clean_up", 0);
