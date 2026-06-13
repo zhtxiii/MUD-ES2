@@ -7,6 +7,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR="$(dirname "$DIR")"
 sed -e "s%__ROOT__%${ROOT_DIR}%g" ${DIR}/config.ES2.in > ${DIR}/config.ES2
 
+# fix libevent-2.0.so.5 compatibility (system has libevent-2.1)
+export LD_LIBRARY_PATH="${HOME}/lib:${LD_LIBRARY_PATH}"
+
 # check OS and run MudOS / fluffos
 unamestr=`uname`
 if [[ $unamestr == 'Linux' ]]; then

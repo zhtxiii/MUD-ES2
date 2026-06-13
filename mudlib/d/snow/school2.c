@@ -18,9 +18,10 @@ LONG
   "west" : "/d/snow/school1",
   "east" : "/d/snow/schoolhall",
 ]));
-	set("objects", ([ /* sizeof() == 2 */
+	set("objects", ([ /* sizeof() == 3 */
   "/d/snow/npc/trainee" : 6,
   "/d/snow/npc/fist_trainer" : 1,
+  "/d/snow/npc/dummy" : 1,
 ]));
 	set("outdoors", "snow");
 

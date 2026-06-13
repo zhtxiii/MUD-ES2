@@ -21,10 +21,10 @@ external_port_1 : telnet 4000
 external_port_2 : binary 4001
 
 # absolute pathname of mudlib
-mudlib directory : /path/to/es2-utf8-master/mudlib
+mudlib directory : /home/wind/project/mudlib
 
 # absolute pathname of driver/config dir
-binary directory : /path/to/es2-utf8-master/bin
+binary directory : /home/wind/project/bin
 
 # ------------------------------------------------------------------------
 #
@@ -91,7 +91,7 @@ inherit chain size : 30
 
 # Maximum amount of "eval cost" per thread - execution is halted when 
 # it is exceeded.
-maximum evaluation cost : 30000000
+maximum evaluation cost : 300000000
 
 # Max number of local variables in a function.
 maximum local variables : 50

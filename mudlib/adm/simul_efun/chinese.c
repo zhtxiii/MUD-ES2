@@ -13,11 +13,12 @@ int is_chinese(string str)
 {
   int i;
   int len = strlen(str);
-  // Check if string contains CJK Unified Ideographs (4E00-9FFF)
-  if(len >= 1) {
-    for(i=0; i<len; i++) {
-        if (str[i] >= 0x4E00 && str[i] <= 0x9FFF) return 1;
-    }
+  // UTF-8 字节语义：CJK 统一汉字 U+4E00-U+9FFF 编码为 3 字节，
+  // 首字节 0xE4-0xE9，后两字节为延续字节 (10xxxxxx)。
+  for(i=0; i+2<len; i++) {
+      if (str[i] >= 0xE4 && str[i] <= 0xE9
+          && (str[i+1] & 0xC0) == 0x80
+          && (str[i+2] & 0xC0) == 0x80) return 1;
   }
   return 0;
 }

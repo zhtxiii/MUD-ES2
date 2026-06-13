@@ -91,7 +91,7 @@ inherit chain size : 30
 
 # Maximum amount of "eval cost" per thread - execution is halted when 
 # it is exceeded.
-maximum evaluation cost : 30000000
+maximum evaluation cost : 300000000
 
 # Max number of local variables in a function.
 maximum local variables : 50
