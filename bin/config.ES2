@@ -14,17 +14,17 @@ name : 东方故事II
 # for machines with multiple IP addresses, this specifies which one to use.  this
 # replaces the SERVER_IP compile-time define.
 #mud ip : 255.255.255.255
-mud ip : 127.0.0.1
+mud ip : 0.0.0.0
 
 # the external ports we support
 external_port_1 : telnet 4000
 external_port_2 : binary 4001
 
 # absolute pathname of mudlib
-mudlib directory : /home/wind/project/mudlib
+mudlib directory : /Users/yhm/Documents/frank/MUD-ES2/mudlib
 
 # absolute pathname of driver/config dir
-binary directory : /home/wind/project/bin
+binary directory : /Users/yhm/Documents/frank/MUD-ES2/bin
 
 # ------------------------------------------------------------------------
 #

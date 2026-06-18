@@ -14,7 +14,7 @@ name : 东方故事II
 # for machines with multiple IP addresses, this specifies which one to use.  this
 # replaces the SERVER_IP compile-time define.
 #mud ip : 255.255.255.255
-mud ip : 127.0.0.1
+mud ip : 0.0.0.0
 
 # the external ports we support
 external_port_1 : telnet 4000
