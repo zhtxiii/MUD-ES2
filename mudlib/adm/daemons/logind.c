@@ -22,6 +22,16 @@ object find_body(string name);
 int check_legal_id(string arg);
 int check_legal_name(string arg);
 
+private int utf8_byte_value(int b)
+{
+        return b < 0 ? b + 256 : b;
+}
+
+private int is_cjk_codepoint(int c)
+{
+        return c >= 0x4E00 && c <= 0x9FFF;
+}
+
 void create() 
 {
         seteuid(getuid());
@@ -453,23 +463,56 @@ int check_legal_id(string id)
 
 int check_legal_name(string name)
 {
-        int i;
+        int i, len, chars, b0, b1, b2, unicode_name;
 
-        i = strlen(name);
-        
-        if( (strlen(name) < 1) || (strlen(name) > 6 ) ) {
-                write("对不起，你的中文名字必须是 1 到 6 个中文字。\n");
-                return 0;
-        }
-        while(i--) {
+        len = strlen(name);
+        unicode_name = 1;
+        for(i = 0; i < len; i++) {
                 if( name[i]<=' ' ) {
                         write("对不起，你的中文名字不能用控制字元。\n");
                         return 0;
                 }
+                if( !is_cjk_codepoint(name[i]) ) {
+                        unicode_name = 0;
+                        break;
+                }
         }
-        if( !is_chinese(name) ) {
-                write("对不起，请您用「中文」取名字。\n");
+        if( unicode_name )
+                chars = len;
+        else
+                chars = utf8_strlen(name);
+        
+        if( chars < 1 || chars > 6 ) {
+                write("对不起，你的中文名字必须是 1 到 6 个中文字。\n");
                 return 0;
+        }
+        if( unicode_name ) {
+                if( member_array(name, banned_name)!=-1 ) {
+                        write("对不起，这种名字会造成其他人的困扰。\n");
+                        return 0;
+                }
+                return 1;
+        }
+
+        for(i = 0; i < len; i += 3) {
+                b0 = utf8_byte_value(name[i]);
+                if( b0<=' ' ) {
+                        write("对不起，你的中文名字不能用控制字元。\n");
+                        return 0;
+                }
+                if( i + 2 < len ) {
+                        b1 = utf8_byte_value(name[i+1]);
+                        b2 = utf8_byte_value(name[i+2]);
+                }
+                if( i + 2 >= len
+                ||  ((b0 != 0xE4 || b1 < 0xB8)
+                        && (b0 < 0xE5 || b0 > 0xE8)
+                        && (b0 != 0xE9 || b1 > 0xBF))
+                ||  (b1 & 0xC0) != 0x80
+                ||  (b2 & 0xC0) != 0x80 ) {
+                        write("对不起，请您用「中文」取名字。\n");
+                        return 0;
+                }
         }
         if( member_array(name, banned_name)!=-1 ) {
                 write("对不起，这种名字会造成其他人的困扰。\n");
