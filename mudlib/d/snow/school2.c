@@ -21,7 +21,7 @@ LONG
 	set("objects", ([ /* sizeof() == 3 */
   "/d/snow/npc/trainee" : 6,
   "/d/snow/npc/fist_trainer" : 1,
-  "/d/snow/npc/dummy" : 1,
+/*"/d/snow/npc/dummy" : 1,*/
 ]));
 	set("outdoors", "snow");
 
